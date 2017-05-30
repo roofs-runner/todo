@@ -2,6 +2,8 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
+var ToDoApp = require ('ToDoApp');
+
 //Include foundation
 require('style!css!foundation-sites/dist/css/foundation.css');
 $(document).foundation();
@@ -10,7 +12,6 @@ $(document).foundation();
 require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
-
-    <p>Boilerplate3</p>,
+    <ToDoApp />,
     document.getElementById('app')
 );

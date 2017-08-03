@@ -1,5 +1,5 @@
 var React = require('react');
-var RactDOM = require('react-dom');
+var ReactDOM = require('react-dom');
 var expect = require('expect');
 var $ = require('jquery');
 var TestUtils = require('react-addons-test-utils');
@@ -10,6 +10,15 @@ var ToDo = require('ToDo');
 describe('ToDoList', () => {
     it('should check if ToDoList variable exists', () => {
         expect(ToDoList).toExist();
+    });
+
+    it('should render message if no todos exist', () =>{
+       var todos = [];
+        var toDoList = TestUtils.renderIntoDocument(<ToDoList todos={todos}/>);
+        var $el = $(ReactDOM.findDOMNode(toDoList));
+
+        expect($el.find('.container__message').length).toBe(1);
+
     });
 
      it('should render one ToDo component for each ToDo item', () => {

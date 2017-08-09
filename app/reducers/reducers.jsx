@@ -26,7 +26,7 @@ export var todoReducer = (state = [], action) => {
                 ...state,
                 {
                     id: uuid(),
-                    text: action.text,
+                    text: action.todo,
                     completed: false,
                     createdAt: moment().unix(),
                     completedAt: null
@@ -42,6 +42,8 @@ export var todoReducer = (state = [], action) => {
                       completed: completedToggled,
                       completedAt: completedToggled ? moment().unix() : null
                   }
+              } else {
+                  return todo;
               }
             });
         default:

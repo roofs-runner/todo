@@ -40,7 +40,7 @@ describe('Actions', () => {
            id: 1
        };
 
-       var res = actions.toggleToDO(action.id);
+       var res = actions.toggleToDo(action.id);
 
        expect(res).toEqual(action);
    });

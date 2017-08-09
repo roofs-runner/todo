@@ -18,7 +18,7 @@ export var addToDo = (todo) => {
     };
 };
 
-export var toggleToDO = (id) => {
+export var toggleToDo = (id) => {
     return {
         type: 'TOGGLE_TODO',
         id

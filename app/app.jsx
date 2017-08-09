@@ -7,17 +7,19 @@ var ToDoApp = require ('ToDoApp');
 
 var actions = require('actions');
 var store = require('configureStore').configure();
+var todoAPI = require('ToDoAPI');
 
 console.log('This is store', store);
 
 
 store.subscribe(() => {
-   console.log('New state', store.getState());
+    var state = store.getState();
+   console.log('New state', state);
+   todoAPI.setTodos(state.todos);
 });
 
-store.dispatch(actions.addToDo('ke-ke-ke'));
-store.dispatch(actions.setSearchText('kdfvkdfv'));
-store.dispatch(actions.toggleShowCompleted());
+var initialTodos = todoAPI.getTodos();
+store.dispatch(actions.addTodos(initialTodos));
 
 //Include foundation
 require('style!css!foundation-sites/dist/css/foundation.css');

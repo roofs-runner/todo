@@ -18,6 +18,13 @@ export var addToDo = (todo) => {
     };
 };
 
+export var addTodos = (todos) => {
+    return {
+        type: 'ADD_TODOS',
+        todos
+    };
+};
+
 export var toggleToDo = (id) => {
     return {
         type: 'TOGGLE_TODO',
